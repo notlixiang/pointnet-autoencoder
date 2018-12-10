@@ -19,7 +19,7 @@ import show3d_balls
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--gpu', type=int, default=0, help='GPU to use [default: GPU 0]')
-parser.add_argument('--model', default='model', help='Model name [default: model]')
+parser.add_argument('--model', default='model_emd', help='Model name [default: model]')
 parser.add_argument('--category', default=None, help='Which single class to train on [default: None]')
 parser.add_argument('--log_dir', default='log', help='Log dir [default: log]')
 parser.add_argument('--num_point', type=int, default=2048, help='Point Number [default: 2048]')

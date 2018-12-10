@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*-
 """ TF model for point cloud autoencoder. PointNet encoder, FC decoder.
 Using GPU Earth Mover's distance loss.
 
 Author: Charles R. Qi
 Date: May 2018
 """
+
 import tensorflow as tf
 import numpy as np
 import math
@@ -82,7 +84,7 @@ def get_loss(pred, label, end_points):
     dists_forward,_,dists_backward,_ = tf_nndistance.nn_distance(pred, label)
     pc_loss = tf.reduce_mean(dists_forward+dists_backward)
     end_points['pcloss'] = pc_loss
-
+    # match the points
     match = tf_approxmatch.approx_match(label, pred)
     loss = tf.reduce_mean(tf_approxmatch.match_cost(label, pred, match))
     tf.summary.scalar('loss', loss)

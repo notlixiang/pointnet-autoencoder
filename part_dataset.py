@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
     Dataset for shapenet part segmentaion.
 '''
@@ -43,7 +44,7 @@ class PartDataset():
         self.npoints = npoints
         self.root = root
         self.catfile = os.path.join(self.root, 'synsetoffset2category.txt')
-        self.cat = {}
+        self.cat = {}#类别名称和对应文件夹
         
         self.classification = classification
         self.normalize = normalize
@@ -56,6 +57,7 @@ class PartDataset():
             self.cat = {k:v for k,v in self.cat.items() if k in class_choice}
             
         self.meta = {}
+        #从json中读入文件名称
         with open(os.path.join(self.root, 'train_test_split', 'shuffled_train_file_list.json'), 'r') as f:
             train_ids = set([str(d.split('/')[2]) for d in json.load(f)])
         with open(os.path.join(self.root, 'train_test_split', 'shuffled_val_file_list.json'), 'r') as f:
@@ -66,7 +68,7 @@ class PartDataset():
             self.meta[item] = []
             dir_point = os.path.join(self.root, self.cat[item], 'points')
             dir_seg = os.path.join(self.root, self.cat[item], 'points_label')
-            fns = sorted(os.listdir(dir_point))
+            fns = sorted(os.listdir(dir_point))#点云文件名称
             if split=='trainval':
                 fns = [fn for fn in fns if ((fn[0:-4] in train_ids) or (fn[0:-4] in val_ids))]
             elif split=='train':
@@ -82,7 +84,8 @@ class PartDataset():
             for fn in fns:
                 token = (os.path.splitext(os.path.basename(fn))[0]) 
                 self.meta[item].append((os.path.join(dir_point, token + '.pts'), os.path.join(dir_seg, token + '.seg')))
-        
+
+        #组合成一个列表
         self.datapath = []
         for item in self.cat:
             for fn in self.meta[item]:
@@ -129,7 +132,7 @@ class PartDataset():
 
 
 if __name__ == '__main__':
-    d = PartDataset(root = os.path.join(BASE_DIR, 'data/shapenetcore_partanno_segmentation_benchmark_v0'), class_choice = ['Chair'], split='trainval')
+    d = PartDataset(root = os.path.join(BASE_DIR, 'data/shapenetcore_partanno_segmentation_benchmark_v0'), class_choice = None, split='trainval')
     print(len(d))
     import time
     tic = time.time()
