@@ -57,7 +57,7 @@ class PartDataset():
             self.cat = {k:v for k,v in self.cat.items() if k in class_choice}
             
         self.meta = {}
-        #从json中读入文件名
+        #从json中读入文件名称
         with open(os.path.join(self.root, 'train_test_split', 'shuffled_train_file_list.json'), 'r') as f:
             train_ids = set([str(d.split('/')[2]) for d in json.load(f)])
         with open(os.path.join(self.root, 'train_test_split', 'shuffled_val_file_list.json'), 'r') as f:
@@ -81,27 +81,24 @@ class PartDataset():
                 print('Unknown split: %s. Exiting..'%(split))
                 exit(-1)
                 
-            for fn in fns:#fns: 文件名.pts
+            for fn in fns:
                 token = (os.path.splitext(os.path.basename(fn))[0]) 
-                # self.meta[item].append((os.path.join(dir_point, token + '.pts'), os.path.join(dir_seg, token + '.seg')))
-                self.meta[item].append((os.path.join(dir_point, token + '.pts'),'seg'))
+                self.meta[item].append((os.path.join(dir_point, token + '.pts'), os.path.join(dir_seg, token + '.seg')))
 
         #组合成一个列表
         self.datapath = []
         for item in self.cat:
             for fn in self.meta[item]:
                 self.datapath.append((item, fn[0], fn[1]))
-                # self.datapath.append((item, fn[0]))
             
          
-        self.classes = dict(zip(self.cat, range(len(self.cat))))
-
-        # self.num_seg_classes = 0
-        # if not self.classification:
-        #     for i in range(len(self.datapath)/50):
-        #         l = len(np.unique(np.loadtxt(self.datapath[i][-1]).astype(np.uint8)))
-        #         if l > self.num_seg_classes:#取最大值
-        #             self.num_seg_classes = l
+        self.classes = dict(zip(self.cat, range(len(self.cat))))  
+        self.num_seg_classes = 0
+        if not self.classification:
+            for i in range(len(self.datapath)/50):
+                l = len(np.unique(np.loadtxt(self.datapath[i][-1]).astype(np.uint8)))
+                if l > self.num_seg_classes:
+                    self.num_seg_classes = l
         
         self.cache = {} # from index to (point_set, cls, seg) tuple
         self.cache_size = 18000
@@ -114,12 +111,14 @@ class PartDataset():
             cls = self.classes[self.datapath[index][0]]
             cls = np.array([cls]).astype(np.int32)
             point_set = np.loadtxt(fn[1]).astype(np.float32)
+            # print 'point_set.shape'
+            # print point_set.shape
             if self.normalize:
                 point_set = pc_normalize(point_set)
-            # seg = np.loadtxt(fn[2]).astype(np.int64) - 1
+            seg = np.loadtxt(fn[2]).astype(np.int64) - 1
             # print 'seg.shape'
             # print seg.shape
-            seg = np.zeros([point_set.shape[0],],dtype=np.int64)
+            # seg = np.zeros([point_set.shape[0],],dtype=np.int64)
             # print 'point_set.size'
             # print point_set.size
             if len(self.cache) < self.cache_size:
