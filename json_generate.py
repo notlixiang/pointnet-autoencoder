@@ -21,9 +21,9 @@ class JsonGenerate():
         self.basenames = []
         self.meta = {}
         self.jsonall = []
-        self.train_rate = 1
-        self.val_rate = 1
-        self.test_rate = 1
+        self.train_rate = 4.0
+        self.val_rate = 2.0
+        self.test_rate = 1.0
         rate_sum = self.train_rate + self.val_rate + self.test_rate
         self.train_rate /= rate_sum
         self.val_rate /= rate_sum
@@ -47,19 +47,27 @@ class JsonGenerate():
                 self.jsonall.append(os.path.join('shape_data', self.cat[item], token))
 
     def write_json(self):
+        train_ids = []
+        val_ids = []
+        test_ids = []
         for file in self.jsonall:
             rand = random.uniform(0, 1)
-            if rand<self.train_rate:#train
-                with open(os.path.join(self.root, 'train_test_split', 'shuffled_train_file_list.json'), 'r') as f:
-                    train_ids = set([str(d.split('/')[2]) for d in json.load(f)])
-            elif rand<self.train_rate+self.val_rate:#val
-                with open(os.path.join(self.root, 'train_test_split', 'shuffled_val_file_list.json'), 'r') as f:
-                    val_ids = set([str(d.split('/')[2]) for d in json.load(f)])
-            else:#test
-                with open(os.path.join(self.root, 'train_test_split', 'shuffled_test_file_list.json'), 'r') as f:
-                    test_ids = set([str(d.split('/')[2]) for d in json.load(f)])
+            if rand < self.train_rate:  # train
+                train_ids.append(file)
+            elif rand < self.train_rate + self.val_rate:  # val
+                val_ids.append(file)
+            else:  # test
+                test_ids.append(file)
+
+        with open(os.path.join(self.root, 'train_test_split', 'shuffled_train_file_list.json'), 'w') as f:
+            json.dump(train_ids,f)
+        with open(os.path.join(self.root, 'train_test_split', 'shuffled_val_file_list.json'), 'w') as f:
+            json.dump(val_ids,f)
+        with open(os.path.join(self.root, 'train_test_split', 'shuffled_test_file_list.json'), 'w') as f:
+            json.dump(test_ids,f)
 
 
 if __name__ == '__main__':
     g = JsonGenerate(root=os.path.join(BASE_DIR, 'data/plan_data'))
     g.get_file_basename()
+    g.write_json()

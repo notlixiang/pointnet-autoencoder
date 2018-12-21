@@ -1,39 +1,64 @@
 Namespace(batch_size=32, category='DroneEnvi', decay_rate=0.7, decay_step=200000, gpu=0, learning_rate=0.001, log_dir='log_drone_envi', max_epoch=201, model='model_emd', momentum=0.9, no_rotation=False, num_point=2048, optimizer='adam')
-pid: 9999
+pid: 16011
 **** EPOCH 000 ****
-2018-12-21 15:54:12.753838
- -- 010 / 073 --
-mean loss: 610.977356
-mean pc loss: 0.067426
- -- 020 / 073 --
-mean loss: 414.782523
-mean pc loss: 0.022609
- -- 030 / 073 --
-mean loss: 358.658380
-mean pc loss: 0.015659
- -- 040 / 073 --
-mean loss: 339.487482
-mean pc loss: 0.013238
- -- 050 / 073 --
-mean loss: 319.379987
-mean pc loss: 0.011103
- -- 060 / 073 --
-mean loss: 323.314062
-mean pc loss: 0.010666
- -- 070 / 073 --
-mean loss: 321.453424
-mean pc loss: 0.011116
-2018-12-21 15:55:31.481907
+2018-12-21 17:56:39.929886
+ -- 010 / 071 --
+mean loss: 609.782886
+mean pc loss: 0.065797
+ -- 020 / 071 --
+mean loss: 410.986652
+mean pc loss: 0.022055
+ -- 030 / 071 --
+mean loss: 358.640982
+mean pc loss: 0.015184
+ -- 040 / 071 --
+mean loss: 339.241803
+mean pc loss: 0.012987
+ -- 050 / 071 --
+mean loss: 334.886880
+mean pc loss: 0.011692
+ -- 060 / 071 --
+mean loss: 311.090494
+mean pc loss: 0.009995
+ -- 070 / 071 --
+mean loss: 310.503204
+mean pc loss: 0.009764
+2018-12-21 17:57:57.223789
 ---- EPOCH 000 EVALUATION ----
-eval mean loss: 287.636975
-eval mean pc loss: 0.006718
+eval mean loss: 337.820638
+eval mean pc loss: 0.009320
 Model saved in file: log_drone_envi/best_model_epoch_000.ckpt
 Model saved in file: log_drone_envi/model.ckpt
 **** EPOCH 001 ****
-2018-12-21 15:55:38.801738
- -- 010 / 073 --
-mean loss: 301.717807
-mean pc loss: 0.009196
- -- 020 / 073 --
-mean loss: 302.266287
-mean pc loss: 0.008919
+2018-12-21 17:58:06.048159
+ -- 010 / 071 --
+mean loss: 305.570770
+mean pc loss: 0.009438
+ -- 020 / 071 --
+mean loss: 319.830856
+mean pc loss: 0.010238
+ -- 030 / 071 --
+mean loss: 317.326981
+mean pc loss: 0.009775
+ -- 040 / 071 --
+mean loss: 320.631863
+mean pc loss: 0.010171
+ -- 050 / 071 --
+mean loss: 311.358051
+mean pc loss: 0.009747
+ -- 060 / 071 --
+mean loss: 303.503940
+mean pc loss: 0.008822
+ -- 070 / 071 --
+mean loss: 319.627286
+mean pc loss: 0.008956
+2018-12-21 17:58:52.952498
+---- EPOCH 001 EVALUATION ----
+eval mean loss: 314.520485
+eval mean pc loss: 0.008676
+Model saved in file: log_drone_envi/best_model_epoch_001.ckpt
+**** EPOCH 002 ****
+2018-12-21 17:58:56.467074
+ -- 010 / 071 --
+mean loss: 307.401172
+mean pc loss: 0.009026
