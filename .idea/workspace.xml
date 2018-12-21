@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59579960-29ba-4051-aff3-f862658c8f3f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/json_generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/json_generate.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +13,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/pointnet_autoencoder$part_dataset.coverage" NAME="part_dataset Coverage Results" MODIFIED="1544790726652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pointnet_autoencoder$train.coverage" NAME="train Coverage Results" MODIFIED="1545378849250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pointnet_autoencoder$json_generate.coverage" NAME="json_generate Coverage Results" MODIFIED="1545381990395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pointnet_autoencoder$part_dataset_0.coverage" NAME="part_dataset_0 Coverage Results" MODIFIED="1544790473814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pointnet_autoencoder$test.coverage" NAME="test Coverage Results" MODIFIED="1545379026238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -45,12 +45,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="280" />
+          <entry key="py" value="382" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="280" />
+          <entry key="Python" value="382" />
         </counts>
       </usages-collector>
     </session>
@@ -72,7 +72,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-861">
+            <state relative-caret-position="-1130">
               <caret line="21" column="102" lean-forward="true" selection-start-line="21" selection-start-column="102" selection-end-line="21" selection-end-column="102" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -84,12 +84,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/json_generate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="399">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="e#76#85#0" expanded="true" />
-                <marker date="1545379921998" expanded="true" signature="228:235" ph="..." />
-                <marker date="1545379921998" expanded="true" signature="262:264" ph="..." />
+                <marker date="1545382020645" expanded="true" signature="220:466" ph="..." />
+                <marker date="1545382020645" expanded="true" signature="667:1274" ph="..." />
+                <marker date="1545382020645" expanded="true" signature="667:1278" ph="..." />
+                <marker date="1545382020645" expanded="true" signature="1300:1302" ph="..." />
               </folding>
             </state>
           </provider>
@@ -98,8 +100,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="84" column="58" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="58" />
+            <state relative-caret-position="337">
+              <caret line="58" column="22" lean-forward="true" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="22" />
               <folding>
                 <element signature="e#76#85#0" expanded="true" />
               </folding>
@@ -249,7 +251,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.json_generate">
+    <configuration name="json_generate" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pointnet-autoencoder" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/json_generate.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="part_dataset" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pointnet-autoencoder" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -343,9 +367,11 @@
       <item itemvalue="Python.train" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.part_dataset_0" />
+      <item itemvalue="Python.json_generate" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.json_generate" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.train" />
         <item itemvalue="Python.part_dataset" />
@@ -370,13 +396,13 @@
     <frame x="1971" y="-4" width="1869" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20296215" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20296215" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294979" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49972573" weight="0.38179916" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39958158" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39958158" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -586,7 +612,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-861">
+        <state relative-caret-position="-1130">
           <caret line="21" column="102" lean-forward="true" selection-start-line="21" selection-start-column="102" selection-end-line="21" selection-end-column="102" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -596,8 +622,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/part_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="84" column="58" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="58" />
+        <state relative-caret-position="337">
+          <caret line="58" column="22" lean-forward="true" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="22" />
           <folding>
             <element signature="e#76#85#0" expanded="true" />
           </folding>
@@ -606,12 +632,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/json_generate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="399">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="e#76#85#0" expanded="true" />
-            <marker date="1545379921998" expanded="true" signature="228:235" ph="..." />
-            <marker date="1545379921998" expanded="true" signature="262:264" ph="..." />
+            <marker date="1545382020645" expanded="true" signature="220:466" ph="..." />
+            <marker date="1545382020645" expanded="true" signature="667:1274" ph="..." />
+            <marker date="1545382020645" expanded="true" signature="667:1278" ph="..." />
+            <marker date="1545382020645" expanded="true" signature="1300:1302" ph="..." />
           </folding>
         </state>
       </provider>
