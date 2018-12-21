@@ -1,0 +1,39 @@
+Namespace(batch_size=32, category='DroneEnvi', decay_rate=0.7, decay_step=200000, gpu=0, learning_rate=0.001, log_dir='log_drone_envi', max_epoch=201, model='model_emd', momentum=0.9, no_rotation=False, num_point=2048, optimizer='adam')
+pid: 9999
+**** EPOCH 000 ****
+2018-12-21 15:54:12.753838
+ -- 010 / 073 --
+mean loss: 610.977356
+mean pc loss: 0.067426
+ -- 020 / 073 --
+mean loss: 414.782523
+mean pc loss: 0.022609
+ -- 030 / 073 --
+mean loss: 358.658380
+mean pc loss: 0.015659
+ -- 040 / 073 --
+mean loss: 339.487482
+mean pc loss: 0.013238
+ -- 050 / 073 --
+mean loss: 319.379987
+mean pc loss: 0.011103
+ -- 060 / 073 --
+mean loss: 323.314062
+mean pc loss: 0.010666
+ -- 070 / 073 --
+mean loss: 321.453424
+mean pc loss: 0.011116
+2018-12-21 15:55:31.481907
+---- EPOCH 000 EVALUATION ----
+eval mean loss: 287.636975
+eval mean pc loss: 0.006718
+Model saved in file: log_drone_envi/best_model_epoch_000.ckpt
+Model saved in file: log_drone_envi/model.ckpt
+**** EPOCH 001 ****
+2018-12-21 15:55:38.801738
+ -- 010 / 073 --
+mean loss: 301.717807
+mean pc loss: 0.009196
+ -- 020 / 073 --
+mean loss: 302.266287
+mean pc loss: 0.008919
